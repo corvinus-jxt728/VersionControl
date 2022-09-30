@@ -126,4 +126,7 @@
   <data name="placeholder" xml:space="preserve">
     <value>nev</value>
   </data>
+  <data name="WriteToFile" xml:space="preserve">
+    <value>Fájlba írás</value>
+  </data>
 </root>

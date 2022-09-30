@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VerkoForm.Entities;
+using System.IO;
 
 namespace VerkoForm
 {
@@ -20,6 +21,7 @@ namespace VerkoForm
             label1.Text = Resource1.FullName;
             label2.Text = Resource1.placeholder;
             button1.Text = Resource1.Add;
+            button2.Text = Resource1.WriteToFile;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
@@ -34,6 +36,24 @@ namespace VerkoForm
                // FirstName = textBox2.Text
             };
             users.Add(u);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.DefaultExt = ".csv";
+            sfd.ShowDialog();
+            StreamWriter sw = new StreamWriter(sfd.FileName, false, encoding: Encoding.UTF8);
+            for (int i = 0; i < users.Count; i++)
+            {
+                sw.Write(users[i].ID);
+                sw.Write(";");
+                sw.Write(users[i].FullName);
+                sw.WriteLine();
+            }
+           
+            sw.Close();
+           
         }
     }
 }
