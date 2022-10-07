@@ -12,6 +12,7 @@ namespace excellence
 {
     public partial class Form1 : Form
     {
+        List<Flat> flats = new List<Flat>();
         public Form1()
         {
             InitializeComponent();
