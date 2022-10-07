@@ -12,10 +12,17 @@ namespace excellence
 {
     public partial class Form1 : Form
     {
-        List<Flat> flats = new List<Flat>();
+        List<Flat> flats;
+        RealEstateEntities context = new RealEstateEntities();
+         
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+        }
+        private void LoadData()
+        {
+            flats = context.Flats.ToList();
         }
     }
 }
