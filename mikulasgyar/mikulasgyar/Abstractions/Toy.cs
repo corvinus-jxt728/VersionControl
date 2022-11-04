@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace mikulasgyar.Entities
+namespace mikulasgyar.Abstractions
 {
     public abstract class Toy : Label
     {
