@@ -24,8 +24,8 @@ namespace mikroszim
             Population = GetPopulation(@"C:\Temp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
-            dataGridView1.DataSource = Population;
-            Szimu();
+          //  dataGridView1.DataSource = Population;
+            
         }
         public List<Person> GetPopulation(string csvpath)
         {
@@ -103,7 +103,7 @@ namespace mikroszim
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                Console.WriteLine(
+                richTextBox1.Text+=(
                     string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
             }
         }
@@ -142,6 +142,16 @@ namespace mikroszim
                     }
                 }
             }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Szimu();
+            DisplayResults();
         }
+        public void DisplayResults()
+        {
+    
+        }
+    }
     
 }
