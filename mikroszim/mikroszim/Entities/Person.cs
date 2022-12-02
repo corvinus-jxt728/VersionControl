@@ -13,6 +13,7 @@ namespace mikroszim.Entities
         public int NbrOfChildren { get; set; }
         public bool IsAlive { get; set; }
 
+
         public Person()
         {
             IsAlive = true;
