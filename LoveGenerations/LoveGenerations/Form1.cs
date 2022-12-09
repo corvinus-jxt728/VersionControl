@@ -17,7 +17,7 @@ namespace LoveGenerations
         GameArea ga;
         int populationSize = 250;
         int nbrOfSteps = 10;
-        int nbrOfStepsIncrement = 10;
+        int nbrOfStepsIncrement = 1;
         int generation = 1;
 
         public Form1()
